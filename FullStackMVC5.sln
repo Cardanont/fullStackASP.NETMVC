@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStackMVC5", "FullStackMVC5.csproj", "{CCC2EA17-7788-4563-9758-C47A69153E4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStackMVC5.Tests", "..\FullStackMVC5.Tests\FullStackMVC5.Tests.csproj", "{EA79D194-FC62-41B3-B88E-E366914BEAFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC2EA17-7788-4563-9758-C47A69153E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC2EA17-7788-4563-9758-C47A69153E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC2EA17-7788-4563-9758-C47A69153E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC2EA17-7788-4563-9758-C47A69153E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA79D194-FC62-41B3-B88E-E366914BEAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA79D194-FC62-41B3-B88E-E366914BEAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA79D194-FC62-41B3-B88E-E366914BEAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA79D194-FC62-41B3-B88E-E366914BEAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D6FA2A7-6268-4512-ACAC-A747D1224437}
+	EndGlobalSection
+EndGlobal

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FullStackMVC5.Models;
+using FullStackMVC5.ViewModels;
 
 namespace FullStackMVC5.Controllers
 {
@@ -14,13 +15,19 @@ namespace FullStackMVC5.Controllers
         {
             var movie = new Movie() { Name = "Srek!" };
 
-            return View(movie);
-        }
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Customer1"},
+                new Customer {Name = "Customer2"}
+            };
 
-        //[Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
-        //public ActionResult ByReleaseDate(int year, int month)
-        //{
-        //    return Content(year + "/" + month);
-        //}
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel);
+        }
     }
 }

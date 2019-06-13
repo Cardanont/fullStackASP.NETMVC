@@ -8,7 +8,7 @@ namespace FullStackMVC5.ViewModels
 {
     public class RandomMovieViewModel
     {
-        public Movie Moview { get; set; }
+        public Movie Movie { get; set; }
         public List<Customer> Customers { get; set; }
     }
 }

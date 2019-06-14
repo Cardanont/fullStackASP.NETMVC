@@ -10,6 +10,25 @@ namespace FullStackMVC5.Controllers
 {
     public class MoviesController : Controller
     {
+        // GET: Movies/Index
+        public ActionResult Index()
+        {
+
+            var movies = new List<Movie>
+            {
+                new Movie {Name = "Srek!"},
+                new Movie {Name = "Wallie"}
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movies = movies
+            };
+
+            return View(viewModel);
+        }
+
+
         // GET: Movies/Random
         public ActionResult Random()
         {

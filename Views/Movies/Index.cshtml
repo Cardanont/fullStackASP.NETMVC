@@ -1,0 +1,23 @@
+﻿@model FullStackMVC5.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+@if (Model.Movies.Count == 0)
+{
+    <text>No Movies added </text>
+}
+else
+{
+    <ul>
+        <lh>Movies</lh>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>@movie.Name</li>
+        }
+    </ul>
+}

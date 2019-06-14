@@ -14,18 +14,29 @@ namespace FullStackMVC5.Controllers
         public ActionResult Index()
         {
 
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Jhon Smith"},
-                new Customer {Name = "Mary Williams"}
-            };
+            var customers = GetCustomers();
+            
 
-            var viewModel = new RandomMovieViewModel
-            {
-                Customers = customers
-            };
+            return View(customers);
+        }
 
-            return View(viewModel);
+        public ActionResult Details(int id)
+        {
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            return View(customer);
+        }
+
+        private IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>
+            {
+                new Customer{Id = 1, Name = "Jhon Smith"},
+                new Customer {Id = 2, Name = "Mary Williams"}
+            };
         }
     }
 }

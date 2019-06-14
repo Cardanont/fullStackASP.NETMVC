@@ -17,7 +17,7 @@ namespace FullStackMVC5.Controllers
             var movies = new List<Movie>
             {
                 new Movie {Name = "Srek!"},
-                new Movie {Name = "Wallie"}
+                new Movie {Name = "Wall-e"}
             };
 
             var viewModel = new RandomMovieViewModel

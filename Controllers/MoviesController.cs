@@ -32,8 +32,6 @@ namespace FullStackMVC5.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() { Name = "Srek!" };
-
             var customers = new List<Customer>
             {
                 new Customer {Name = "Customer1"},
@@ -42,7 +40,6 @@ namespace FullStackMVC5.Controllers
 
             var viewModel = new RandomMovieViewModel
             {
-                Movie = movie,
                 Customers = customers
             };
 

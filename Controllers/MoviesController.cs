@@ -29,21 +29,21 @@ namespace FullStackMVC5.Controllers
         }
 
 
-        // GET: Movies/Random
-        //public ActionResult Random()
-        //{
-        //    var customers = new List<Customer>
-        //    {
-        //        new Customer {Name = "Customer1"},
-        //        new Customer {Name = "Customer2"}
-        //    };
+        //GET: Movies/Random
+        public ActionResult Random()
+        {
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Customer1"},
+                new Customer {Name = "Customer2"}
+            };
 
-        //    var viewModel = new RandomMovieViewModel
-        //    {
-        //        Customers = customers
-        //    };
+            var viewModel = new RandomMovieViewModel
+            {
+                Customers = customers
+            };
 
-        //    return View(viewModel);
-        //}
+            return View(viewModel);
+        }
     }
 }

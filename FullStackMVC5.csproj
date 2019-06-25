@@ -195,6 +195,14 @@
     <Compile Include="Migrations\201906220534596_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201906220534596_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906251918201_AddingNameToMemebershiType.cs" />
+    <Compile Include="Migrations\201906251918201_AddingNameToMemebershiType.Designer.cs">
+      <DependentUpon>201906251918201_AddingNameToMemebershiType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906252006153_PendingChanges.cs" />
+    <Compile Include="Migrations\201906252006153_PendingChanges.Designer.cs">
+      <DependentUpon>201906252006153_PendingChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -301,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906220534596_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201906220534596_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906251918201_AddingNameToMemebershiType.resx">
+      <DependentUpon>201906251918201_AddingNameToMemebershiType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906252006153_PendingChanges.resx">
+      <DependentUpon>201906252006153_PendingChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

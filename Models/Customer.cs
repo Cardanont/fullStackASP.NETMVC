@@ -16,6 +16,10 @@ namespace FullStackMVC5.Models
 
         public bool IsSubscribedToNewsletter { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString ="{MM/dd/yyyy}")]
+        public DateTime? BirthDate { get; set; }
+
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
     }

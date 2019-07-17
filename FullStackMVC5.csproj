@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201907171913121_PopulateMovieGenres.Designer.cs">
       <DependentUpon>201907171913121_PopulateMovieGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907171958270_ApplyLimitToMovieGenresName.cs" />
+    <Compile Include="Migrations\201907171958270_ApplyLimitToMovieGenresName.Designer.cs">
+      <DependentUpon>201907171958270_ApplyLimitToMovieGenresName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -344,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907171913121_PopulateMovieGenres.resx">
       <DependentUpon>201907171913121_PopulateMovieGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907171958270_ApplyLimitToMovieGenresName.resx">
+      <DependentUpon>201907171958270_ApplyLimitToMovieGenresName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

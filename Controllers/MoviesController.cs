@@ -10,15 +10,24 @@ namespace FullStackMVC5.Controllers
 {
     public class MoviesController : Controller
     {
+
+        public ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();    
+        }
+
         // GET: Movies/Index
         public ActionResult Index()
         {
 
-            var movies = new List<Movie>
-            {
-                new Movie {Name = "Srek!"},
-                new Movie {Name = "Wall-e"}
-            };
+            var movies = _context.Movies.ToList();
 
             var viewModel = new RandomMovieViewModel
             {
@@ -32,11 +41,7 @@ namespace FullStackMVC5.Controllers
         //GET: Movies/Random
         public ActionResult Random()
         {
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer1"},
-                new Customer {Name = "Customer2"}
-            };
+            var customers = _context.Customers.ToList();
 
             var viewModel = new RandomMovieViewModel
             {

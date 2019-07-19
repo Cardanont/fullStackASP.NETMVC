@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using FullStackMVC5.Models;
 using FullStackMVC5.ViewModels;
+using System.Data.Entity;
 
 namespace FullStackMVC5.Controllers
 {
@@ -27,7 +28,7 @@ namespace FullStackMVC5.Controllers
         public ActionResult Index()
         {
 
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(c => c.MovieGenre).ToList();
 
             var viewModel = new RandomMovieViewModel
             {

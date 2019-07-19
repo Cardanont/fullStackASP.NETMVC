@@ -21,6 +21,8 @@ namespace FullStackMVC5.Models
         public DateTime? BirthDate { get; set; }
 
         public MembershipType MembershipType { get; set; }
+
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
     }
 }

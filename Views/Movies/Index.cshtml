@@ -1,41 +1,41 @@
-﻿@model FullStackMVC5.ViewModels.RandomMovieViewModel
+﻿@model IEnumerable<FullStackMVC5.Models.Movie>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-<h2>Movies</h2>
+    <h2>Movies</h2>
 
-@if (Model.Movies.Count == 0)
-{
-    <text>We don't have movies right now hehe </text>
-}
-else
-{
-
-
+    @if (!Model.Any())
+    {
+        <text>We don't have movies right now hehe </text>
+    }
+    else
+    {
 
 
-    <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="row">Movies</th>
-                    <th scope="row">Genre</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                @foreach (var movie in Model.Movies)
-                {
-                <tr>
-                    <td>@movie.Name</td>
-                    <td>@movie.MovieGenre.Name</td>
-                </tr>
 
-                }
-            </tbody>
-        </table>
-    </div>
-}
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="row">Movie</th>
+                        <th scope="row">Genre</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var movie in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(movie.Name, "Details", "Movies", new {id = movie.Id }, null)</td>
+                            <td>@movie.MovieGenre.Name</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    }

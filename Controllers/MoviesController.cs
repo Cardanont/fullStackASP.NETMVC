@@ -30,12 +30,8 @@ namespace FullStackMVC5.Controllers
 
             var movies = _context.Movies.Include(c => c.MovieGenre).ToList();
 
-            var viewModel = new RandomMovieViewModel
-            {
-                Movies = movies
-            };
 
-            return View(viewModel);
+            return View(movies);
         }
 
 
@@ -50,6 +46,17 @@ namespace FullStackMVC5.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public ActionResult Details(int id)
+        {
+
+            var movie = _context.Movies.Include(m => m.MovieGenre).SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
         }
     }
 }

@@ -32,6 +32,11 @@ namespace FullStackMVC5.Controllers
 
             return View(viewModel);
         }
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            return View();
+        }
 
         // GET: Customers
         public ActionResult Index()

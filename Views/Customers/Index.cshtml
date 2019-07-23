@@ -3,8 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- 
- <h2>Customers</h2>
+
+<h2>Customers</h2>
+
+@Html.ActionLink("New Customer", "New", "CustomersController", new { @class = "btn btn-default" })
+
+<br />
 
 
 @if (!Model.Any())

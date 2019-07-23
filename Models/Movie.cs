@@ -13,15 +13,17 @@ namespace FullStackMVC5.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{MM/dd/yyyy}")]
+        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{MM/dd/yyyy}")]
         public DateTime DateAdded { get; set; }
         [Required]
+        [Display(Name = "Number in Stock")]
         public int NumberInStock { get; set; }
         [Required]
+        [Display(Name = "Genre")]
         public MovieGenre MovieGenre { get; set; }
         public byte MovieGenreId { get; set; }
     }

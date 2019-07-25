@@ -49,20 +49,17 @@ namespace FullStackMVC5.Controllers
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
-                _context.Movies.Add(movie);
-            else
             {
-                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
-
-                movieInDb.Name = movie.Name;
-                movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.MovieGenreId = movie.MovieGenreId;
-                movieInDb.NumberInStock = movie.NumberInStock;
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
             }
+                
+
 
             _context.SaveChanges();
+            
 
-            return View("Index", "Movies");
+            return RedirectToAction("Index", "Movies");
 
         }
 

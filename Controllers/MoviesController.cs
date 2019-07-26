@@ -53,9 +53,16 @@ namespace FullStackMVC5.Controllers
                 movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
             }
-                
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
 
-
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movie.MovieGenreId = movie.MovieGenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+            }
+            
             _context.SaveChanges();
             
 
@@ -101,7 +108,7 @@ namespace FullStackMVC5.Controllers
                 MovieGenres = _context.MovieGenres.ToList()
             };
 
-            return View("", viewModel);
+            return View("MovieForm", viewModel);
         }
     }
 }

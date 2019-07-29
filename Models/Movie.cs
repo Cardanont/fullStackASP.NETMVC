@@ -21,6 +21,7 @@ namespace FullStackMVC5.Models
 
         [Required]
         [Display(Name = "Number in Stock")]
+        [Range(1, 20)]
         public int NumberInStock { get; set; }
 
         public MovieGenre MovieGenre { get; set; }

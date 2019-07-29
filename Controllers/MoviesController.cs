@@ -46,6 +46,7 @@ namespace FullStackMVC5.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
 

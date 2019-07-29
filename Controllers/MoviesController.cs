@@ -37,6 +37,7 @@ namespace FullStackMVC5.Controllers
         public ActionResult New()
         {
             var movieGenres = _context.MovieGenres.ToList();
+
             var viewModel = new MovieFormViewModel
             {
                 MovieGenres = movieGenres
@@ -52,9 +53,8 @@ namespace FullStackMVC5.Controllers
 
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieFormViewModel
+                var viewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = new Movie(),
                     MovieGenres = _context.MovieGenres.ToList()
                 };
 
@@ -115,9 +115,8 @@ namespace FullStackMVC5.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 MovieGenres = _context.MovieGenres.ToList()
             };
 

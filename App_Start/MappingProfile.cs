@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FullStackMVC5.Models;
+using FullStackMVC5.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace FullStackMVC5.App_Start
         // Mapp based on the properties names
         public MappingProfile()
         {
-            Mapper.CreateMap<Customer, CusomerDto>();
-            Mapper.CreateMap<CusomerDto, Customer>();
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<CustomerDto, Customer>();
         }
     }
 }

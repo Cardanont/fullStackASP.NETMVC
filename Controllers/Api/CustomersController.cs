@@ -33,5 +33,53 @@ namespace FullStackMVC5.Controllers.Api
 
             return customer;
         }
+
+        // POST /api/customers
+        [HttpPost]
+        public Customer CreateCustomer(Customer customer)
+        {
+            // Validate object
+            if (!ModelState.IsValid)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+
+            return customer;
+        }
+
+        // PUT /api/customers/1
+        [HttpPut]
+        public void UpdateCustomer(int id, Customer customer)
+        {
+            if (!ModelState.IsValid)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            // Check for the existance of this object
+            if (customerInDb == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            customerInDb.Name = customer.Name;
+            customerInDb.BirthDate = customer.BirthDate;
+            customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            customerInDb.MembershipTypeId = customer.MembershipTypeId;
+
+            _context.SaveChanges();
+        }
+
+        // DELETE /api/customer/1
+        [HttpDelete]
+        public void DeleteCustomer(int id)
+        {
+            if (!ModelState.IsValid)
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            _context.Customers.Remove(customerInDb);
+            _context.SaveChanges();
+        }
     }
 }

@@ -27,11 +27,7 @@ namespace FullStackMVC5.Controllers
         // GET: Movies/Index
         public ActionResult Index()
         {
-
-            var movies = _context.Movies.Include(c => c.MovieGenre).ToList();
-
-
-            return View(movies);
+            return View();
         }
 
         public ActionResult New()

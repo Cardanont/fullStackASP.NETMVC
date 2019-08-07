@@ -70,7 +70,6 @@ namespace FullStackMVC5.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-
             return View();
         }
 

@@ -22,6 +22,8 @@ namespace FullStackMVC5.Dtos
         [Range(1, 20)]
         public int NumberInStock { get; set; }
 
+        public MovieGenreDto MovieGenre { get; set; }
+
         [Required]
         public byte MovieGenreId { get; set; }
     }

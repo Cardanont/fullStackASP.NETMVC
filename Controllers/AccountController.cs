@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FullStackMVC5.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FullStackMVC5.Controllers
 {
@@ -155,6 +156,15 @@ namespace FullStackMVC5.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    // Temp Code, delete this! this is a way to add an admin role but is just a temporary solution and has to be removed
+                    // I just leave it for informative purposes, only use this when you want to add an admin role
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("CanManageMovies"));
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageMovies");
+                    //Temp Code End
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

@@ -22,6 +22,22 @@ namespace FullStackMVC5.Controllers
             _context.Dispose();
         }
 
+        // GET: Customers
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var customer = _context.Customers.Include(m => m.MembershipType).SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            return View(customer);
+        }
+
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -67,21 +83,6 @@ namespace FullStackMVC5.Controllers
             return RedirectToAction("Index", "Customers");
         }
 
-        // GET: Customers
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Details(int id)
-        {
-            var customer = _context.Customers.Include(m => m.MembershipType).SingleOrDefault(c => c.Id == id);
-
-            if (customer == null)
-                return HttpNotFound();
-
-            return View(customer);
-        }
 
         public ActionResult Edit(int id)
         {

@@ -97,6 +97,7 @@ namespace FullStackMVC5.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
 

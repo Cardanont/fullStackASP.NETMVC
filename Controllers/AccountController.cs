@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FullStackMVC5.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using FullStackMVC5.ViewModels;
 
 namespace FullStackMVC5.Controllers
 {

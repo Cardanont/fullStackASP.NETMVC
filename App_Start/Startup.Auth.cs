@@ -55,8 +55,8 @@ namespace FullStackMVC5
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "1223455",
-               appSecret: "11aa22bbcc");
+               appId: "1122334455",
+               appSecret: "abcdabcd");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

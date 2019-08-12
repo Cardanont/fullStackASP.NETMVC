@@ -19,6 +19,7 @@ namespace FullStackMVC5.App_Start
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             Mapper.CreateMap<MovieGenre, MovieGenreDto>();
+            Mapper.CreateMap<Rental, NewRentalDto>();
 
 
 

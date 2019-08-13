@@ -28,9 +28,6 @@ namespace FullStackMVC5.Controllers.Api
             var customer = _context.Customers.Single(
                 c => c.Id == newRentalDto.CustomerId);
 
-            if (customer == null)
-                return BadRequest("CustomerId is not valid.");
-
             var movies = _context.Movies.Where(
                 m => newRentalDto.MovieIds.Contains(m.Id));
 

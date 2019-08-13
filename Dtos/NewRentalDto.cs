@@ -9,6 +9,6 @@ namespace FullStackMVC5.Dtos
     {
         public int CustomerId { get; set; }
 
-        public List<int> MovieIds { get; set; }
+        public List<int> MovieIds { get; set; } 
     }
 }

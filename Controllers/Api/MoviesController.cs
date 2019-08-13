@@ -42,6 +42,7 @@ namespace FullStackMVC5.Controllers.Api
             return Ok(Mapper.Map<Movie, MovieDto>(movie));
         }
 
+        // /api/movie/1
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)

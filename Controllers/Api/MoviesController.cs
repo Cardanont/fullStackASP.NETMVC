@@ -20,15 +20,20 @@ namespace FullStackMVC5.Controllers.Api
         }
 
         // GET /api/movies
-        public IHttpActionResult GetMovies()
+        public IEnumerable<MovieDto> GetMovies(string query = null)
         {
 
-            var movieDtos = _context.Movies
+            var moviesQuery = _context.Movies
                 .Include(m => m.MovieGenre)
+                .Where(m => m.NumberAvailable > 0);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            
+            return moviesQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
-
-            return Ok(movieDtos);
         }
 
         // GET /api/movie/1
@@ -42,7 +47,7 @@ namespace FullStackMVC5.Controllers.Api
             return Ok(Mapper.Map<Movie, MovieDto>(movie));
         }
 
-        // /api/movie/1
+        // /api/movies
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)

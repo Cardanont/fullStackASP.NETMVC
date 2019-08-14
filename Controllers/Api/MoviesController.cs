@@ -58,6 +58,7 @@ namespace FullStackMVC5.Controllers.Api
 
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
             _context.Movies.Add(movie);
+            movie.NumberAvailable = movie.NumberInStock;
             _context.SaveChanges();
 
             movieDto.Id = movie.Id;
